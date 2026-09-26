@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Student Management System</h1>
+        <p>Manage student records easily</p>
+    </header>
+
+    <main class="container">
+
+        <section class="form-section">
+            <h2 id="formTitle">Add New Student</h2>
+
+            <form id="studentForm">
+                <input type="hidden" id="editId">
+
+                <div class="form-grid">
+                    <div>
+                        <label for="roll">Roll Number</label>
+                        <input type="text" id="roll"
+                               placeholder="Enter roll number" required>
+                    </div>
+
+                    <div>
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name"
+                               placeholder="Enter student name" required>
+                    </div>
+
+                    <div>
+                        <label for="department">Department</label>
+                        <select id="department" required>
+                            <option value="">Select Department</option>
+                            <option value="IT">IT</option>
+                            <option value="CSE">CSE</option>
+                            <option value="ECE">ECE</option>
+                            <option value="EEE">EEE</option>
+                            <option value="Civil">Civil</option>
+                            <option value="Mechanical">Mechanical</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="year">Year</label>
+                        <select id="year" required>
+                            <option value="">Select Year</option>
+                            <option value="1st Year">1st Year</option>
+                            <option value="2nd Year">2nd Year</option>
+                            <option value="3rd Year">3rd Year</option>
+                            <option value="4th Year">4th Year</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" id="email"
+                               placeholder="Enter email" required>
+                    </div>
+
+                    <div>
+                        <label for="gpa">CGPA</label>
+                        <input type="number" id="gpa"
+                               placeholder="Enter CGPA"
+                               min="0" max="10" step="0.01" required>
+                    </div>
+                </div>
+
+                <div class="form-buttons">
+                    <button type="submit" id="submitBtn">
+                        Add Student
+                    </button>
+
+                    <button type="button" id="cancelBtn"
+                            class="cancel-btn" hidden>
+                        Cancel Edit
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <section class="records-section">
+            <h2>Student Records</h2>
+
+            <div class="stats">
+                <div class="stat-card">
+                    <h3 id="totalStudents">0</h3>
+                    <p>Total Students</p>
+                </div>
+            </div>
+
+            <div class="search-filter">
+                <input type="text" id="search"
+                       placeholder="Search by name or roll number">
+
+                <select id="filterDepartment">
+                    <option value="">All Departments</option>
+                    <option value="IT">IT</option>
+                    <option value="CSE">CSE</option>
+                    <option value="ECE">ECE</option>
+                    <option value="EEE">EEE</option>
+                    <option value="Civil">Civil</option>
+                    <option value="Mechanical">Mechanical</option>
+                </select>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Roll No.</th>
+                            <th>Name</th>
+                            <th>Department</th>
+                            <th>Year</th>
+                            <th>Email</th>
+                            <th>CGPA</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="studentTable">
+                        <!-- Student records appear here -->
+                    </tbody>
+                </table>
+            </div>
+
+            <p id="emptyMessage">No student records found.</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Student Management Dashboard | Week 4 Project</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
